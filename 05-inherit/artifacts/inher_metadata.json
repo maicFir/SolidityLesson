@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "_blance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"05-inherit/inheritance.sol": "inher"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"05-inherit/inheritance.sol": {
+			"keccak256": "0x2095cb5c0c041646c2d5dbddb2468cf8671300a610bd7b62f6deb28ecba5fc60",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d5f10e9d7a763786d045514ee964ae8b19b6b128033886f3149e6dbbf8bf58fb",
+				"dweb:/ipfs/QmRHp4XAbEJ7NV3okRC7aAag3fCPhWXU1Dbcoj7uDvrQvz"
+			]
+		}
+	},
+	"version": 1
+}

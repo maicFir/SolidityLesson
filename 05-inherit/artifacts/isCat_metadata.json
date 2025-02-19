@@ -1,0 +1,73 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"name": "Name",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getCat",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDog",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"05-inherit/inheritance.sol": "isCat"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"05-inherit/inheritance.sol": {
+			"keccak256": "0xd572ef6b62a84acd7284a7b590ba5e15761d1aa488432cc2fa0d30fed8d98952",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d2126c668d3198f6f5e627a7973bd6b90938adbe9b1522fde38f85b27056a3c8",
+				"dweb:/ipfs/QmP1uqN9tqP9eabYEqGBbrfCKuKLBXReA5gYnyZ6NKH7b7"
+			]
+		}
+	},
+	"version": 1
+}

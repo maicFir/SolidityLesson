@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "msg",
+						"type": "string"
+					}
+				],
+				"name": "Log",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "hello",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"08-import/yeyo.sol": "Yeyo"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"08-import/yeyo.sol": {
+			"keccak256": "0x2fbc084009dd40aeddb24278cae3ff2a52b7136725b01d3a45e43eaeecb57ee9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6133f444516e7d553d07db56805b3c9a8a563743fe9935da166c1c5cfcc3d1e9",
+				"dweb:/ipfs/QmTf3f5ELdNLb2NCa9WirtYhLFQJMWEHZg8KN6nm5qSaGm"
+			]
+		}
+	},
+	"version": 1
+}
