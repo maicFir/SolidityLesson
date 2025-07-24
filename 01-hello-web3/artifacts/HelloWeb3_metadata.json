@@ -309,7 +309,7 @@
 			"kind": "user",
 			"methods": {
 				"add()": {
-					"notice": "[ external、internal、public、private ] [pure view payable] public 内部和外部都可以访问 private 只能从合约内部访问，继承的合约不能使用 interval 只能从合约内部访问，继承的合约可以用 external 只能从合约外部访问，*"
+					"notice": "[ external、internal、public、private ] [pure view payable] public 内部和外部都可以访问 private 只能从合约内部访问，继承的合约不能使用 interval 只能从合约内部访问，继承的合约可以用 external 只能从合约外部访问 pure 不能访问合约变量 view 可以访问合约变量 payable*"
 				}
 			},
 			"version": 1
@@ -332,11 +332,11 @@
 	},
 	"sources": {
 		"01-hello-web3/hello.sol": {
-			"keccak256": "0xdf38f710237b78220d199ae4bfec9f78b2e2c034a6c4dc0efb90f8f9232d299f",
+			"keccak256": "0xe25c7a694dc5d0180b5db45829e7c5447b961008b62ab0dbe22dda2e0764e725",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6c1dc9417bcc86d47cac00c229304b83dd38cf7b7040b644bf0c688200371300",
-				"dweb:/ipfs/QmSAPNskysktd35qYQtfVHYf2U9ismEJ5MVtY9GAtGiHAW"
+				"bzz-raw://3dad97f8338d1903fa4075c040125ebe9261cef6e7e55db4a90e577cf7a0ac4b",
+				"dweb:/ipfs/QmYXJbYtLxU25nxw95VesCadL3zFrQ7vVB8hEcN6SwuPSj"
 			]
 		}
 	},
