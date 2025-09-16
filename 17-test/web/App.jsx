@@ -2,9 +2,12 @@ import React, {useEffect, useRef} from "react";
 import { useState } from "react";
 import {ethers, BrowserProvider, Contract} from "ethers";
 import abiJson from "./abi.json"
+import TokenAbi from "./token_abi.json"
 
-const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
+const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+const tokenContractAddress = "0x322813Fd9A801c5507c9de605d63CEA4f2CE6c44";
 const abi = abiJson.abi;
+const tokenAbi = TokenAbi.abi;
 
 
 
@@ -12,7 +15,13 @@ const abi = abiJson.abi;
 function App() {
   const [count, setCount] = useState(0);
   const contractRef = useRef(null);
-  const [address, setAddress] = useState("")
+  const contractRef2 = useRef(null);
+  const [address, setAddress] = useState("");
+  const [balance,setBalance] = useState("");
+
+  const [to, setTo] = useState("0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1");
+  const [amount, setAmount] = useState("");
+
   const getCount = async () => {
     const count = await contractRef.current.get();
     console.log(count);
@@ -50,8 +59,22 @@ function App() {
         const address = await signer.getAddress();
         setAddress(address);
         const contract = new Contract(contractAddress, abi, signer);
+        const tokenTract = new Contract(tokenContractAddress, tokenAbi, signer);
+        const resCode = await provider.getCode(tokenContractAddress)
+        console.log("code", resCode);
         contractRef.current = contract;
+        contractRef2.current = tokenTract;
+        tokenTract.on("Transfer", (from, to, amount) => {
+            console.log("Transfer event")
+            console.log("from, to, amount", from, to, amount)
+          })
+          tokenTract.on("Balance", (account, balance, senderBalance) => {
+            console.log("Balance event")
+            console.log("from, to, amount", account, balance, senderBalance)
+          }) 
+       
         await getCount();
+        handleGetBalance();
       }
     } catch (err) {
       console.warn("检查钱包失败", err);
@@ -59,6 +82,7 @@ function App() {
   };
   useEffect(() => {
     checkIfWalletConnected();
+    
   }, [])
   const handleWalletConnect = async () => {
     await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -71,6 +95,20 @@ function App() {
   const handleDiscontent = () => {
     window.ethereum.request({ method: "wallet_requestPermissions", params: [{ eth_accounts: {} }] });
   }
+  const handleTransfer = async () => {
+    const tx = await contractRef2.current.transfer(to, BigInt(amount));
+    await tx.wait();
+    console.log(tx)
+    handleGetBalance();
+  }
+  const handleGetBalance =  () => {
+    if (!to) {
+        return;
+    }
+    contractRef2.current.getBalance(to).then((tx) => {
+      setBalance(tx.toString())
+    })
+  }
   return (
     <div className="app">
             <h1>Hello Contract</h1>
@@ -81,6 +119,13 @@ function App() {
             <button onClick={getCount}>Get</button>
             <button onClick={increment}>Increment</button>
             <button onClick={desc}>Decrement</button>
+
+            <hr />
+            <input type="text" value={to} onChange={(e) => setTo(e.target.value)} />
+            <input type="text" value={amount} onChange={(e) => setAmount(e.target.value)} />
+            <p>balance:{balance}</p>
+            <button onClick={handleTransfer}>Transfer</button>
+            <button onClick={handleGetBalance}>GetBalance</button>
     </div>
   );
 }

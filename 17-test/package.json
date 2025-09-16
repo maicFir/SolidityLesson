@@ -2,6 +2,7 @@
   "name": "hardhat-project",
   "scripts": {
     "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:goerli": "hardhat run scripts/deploy.js --network goerli",
     "deploy:node": "npx hardhat node",
     "compile": "hardhat compile",
     "test": "hardhat test"
